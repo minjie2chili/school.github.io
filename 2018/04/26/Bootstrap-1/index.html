@@ -15,18 +15,18 @@
     <meta name="keywords" content="tag1," />
   
 
-  <meta name="description" content="1. 表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quot;">
+  <meta name="description" content="1. 默认表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quo">
 <meta name="keywords" content="tag1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bootstrap学习">
 <meta property="og:url" content="http://minjin29.cn/archives/2018/04/26/Bootstrap-1/index.html">
 <meta property="og:site_name" content="yndtemps">
-<meta property="og:description" content="1. 表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quot;">
+<meta property="og:description" content="1. 默认表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-26T09:44:55.856Z">
+<meta property="og:updated_time" content="2018-04-26T11:29:16.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bootstrap学习">
-<meta name="twitter:description" content="1. 表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quot;">
+<meta name="twitter:description" content="1. 默认表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quo">
 
   
 
@@ -172,6 +172,11 @@
 </div>
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#表单控件大小"><span class="toc-text">表单控件大小</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#帮助文本：help-block"><span class="toc-text">帮助文本：help-block</span></a></li></ol></li></ol></li></ol></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
@@ -215,12 +220,15 @@
 
   <div class="article-content">
     
-      <p><font color="green">1. 表单</font><br>最基本的表单是垂直表单，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;form role=&quot;form&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;name&quot;&gt;名称&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;请输入名称&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;inputfile&quot;&gt;文件输入&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; id=&quot;inputfile&quot;&gt;</span><br><span class="line">    &lt;p class=&quot;help-block&quot;&gt;这里是块级帮助文本的实例。&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;checkbox&quot;&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">      &lt;input type=&quot;checkbox&quot;&gt;请打勾</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
-<p>form-group使得与下面的元素保持最好的间距，由于用md编辑，实测只能在浏览器看到：</p>
+      <p><font color="green">1. 默认表单</font><br>最基本的表单是垂直表单，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;form role=&quot;form&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;name&quot;&gt;名称&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;请输入名称&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;inputfile&quot;&gt;文件输入&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; id=&quot;inputfile&quot;&gt;</span><br><span class="line">    &lt;p class=&quot;help-block&quot;&gt;这里是块级帮助文本的实例。&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;checkbox&quot;&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">      &lt;input type=&quot;checkbox&quot;&gt;请打勾</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>form-control:换行+填充整行<br>form-group使得与下面的元素保持最好的间距，由于用md编辑，实测只能在浏览器看到：</p>
 <p><form role="form"><br>  <div class="form-group"><br>    <label for="name">名称</label><br>    <input type="text" class="form-control" id="name" placeholder="请输入名称"><br>  </div><div class="form-group"><label for="inputfile">文件输入</label><br>    <input type="file" id="inputfile"><p class="help-block">这里是块级帮助文本的实例。</p></div><div class="checkbox"><label> <input type="checkbox">请打勾</label><br>  </div><button type="submit" class="btn btn-default">提交</button><br></form></p>
 <p><font color="red">2. 内联表单</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class=&quot;form-inline&quot; role=&quot;form&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label class=&quot;sr-only&quot; for=&quot;name&quot;&gt;名称&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;请输入名称&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label class=&quot;sr-only&quot; for=&quot;inputfile&quot;&gt;文件输入&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; id=&quot;inputfile&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;checkbox&quot;&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">      &lt;input type=&quot;checkbox&quot;&gt;请打勾</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
 <p>与普通form相比，多了form-inline以及label加了sr-only的class，这个class是指screen read only，为了增强可访问性，为残障人士设计，正常并不显示</p>
-
+<p>3.label-control以及form-control-static<br>label-control为右对齐<br>当需要在一个水平表单内的表单标签后放置纯文本时，在 </p><p> 上使用 class .form-control-static。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label class=&quot;col-sm-2 control-label&quot;&gt;Email&lt;/label&gt;</span><br><span class="line">    &lt;div class=&quot;col-sm-10&quot;&gt;</span><br><span class="line">      &lt;p class=&quot;form-control-static&quot;&gt;email@example.com&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;inputPassword&quot; class=&quot;col-sm-2 control-label&quot;&gt;密码&lt;/label&gt;</span><br><span class="line">    &lt;div class=&quot;col-sm-10&quot;&gt;</span><br><span class="line">      &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;inputPassword&quot; placeholder=&quot;请输入密码&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##<font color="blue">其他class</font><br>focuseInput：聚焦<br>disabledInput：禁用输入（其实都只加入disabled就能禁用）<br>disabledSelect：禁止选择</p>
+<h3 id="表单控件大小"><a href="#表单控件大小" class="headerlink" title="表单控件大小"></a>表单控件大小</h3><p>input-lg：<br>input-sm<br>.col-lg-2</p>
+<h6 id="帮助文本：help-block"><a href="#帮助文本：help-block" class="headerlink" title="帮助文本：help-block"></a>帮助文本：help-block</h6>
     
   </div>
 
@@ -260,7 +268,7 @@
     <a class="hide pull-left" href="/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="hide pull-right" href="/">
+    <a class="show pull-right" href="/2018/04/29/IIS-php/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
