@@ -15,17 +15,17 @@
     <meta name="keywords" content="lmj,html+css,编译原理,后端,设计,frontend,design,nodejs,JavaScript" />
   
 
-  <meta name="description" content="前端基础1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。 stop">
+  <meta name="description" content="title:前端基础-1 1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yndtemps">
 <meta property="og:url" content="http://minjin29.cn/archives/2018/05/21/前端基础/index.html">
 <meta property="og:site_name" content="yndtemps">
-<meta property="og:description" content="前端基础1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。 stop">
+<meta property="og:description" content="title:前端基础-1 1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-22T13:35:31.459Z">
+<meta property="og:updated_time" content="2018-05-22T15:51:26.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yndtemps">
-<meta name="twitter:description" content="前端基础1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。 stop">
+<meta name="twitter:description" content="title:前端基础-1 1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序">
 
   
 
@@ -173,7 +173,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端基础"><span class="toc-text">前端基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-stopPropagation和stopImmediatePropagaion的区别"><span class="toc-text">1. stopPropagation和stopImmediatePropagaion的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-盒子模型"><span class="toc-text">2. 盒子模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Request-Headers和Response-Headers"><span class="toc-text">3. Request Headers和Response Headers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-http状态码："><span class="toc-text">4. http状态码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-prototype-gt"><span class="toc-text">Array.prototype=&gt;[]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字转字符：3-toString-gt-’3’、var-a-3-a-toString-gt-’3’"><span class="toc-text">数字转字符：3..toString()=&gt;’3’、var a=3;a.toString()=&gt;’3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var-x-y-1-gt-y是全局变量"><span class="toc-text">{var x=y=1;}=&gt;y是全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function的实例的length放回参数的个数"><span class="toc-text">Function的实例的length放回参数的个数</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-前端基础-1"><span class="toc-text">title:前端基础-1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-stopPropagation和stopImmediatePropagaion的区别"><span class="toc-text">1. stopPropagation和stopImmediatePropagaion的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-盒子模型"><span class="toc-text">2. 盒子模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Request-Headers和Response-Headers"><span class="toc-text">3. Request Headers和Response Headers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-http状态码："><span class="toc-text">4. http状态码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-prototype-gt"><span class="toc-text">Array.prototype=&gt;[]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字转字符：3-toString-gt-’3’、var-a-3-a-toString-gt-’3’"><span class="toc-text">数字转字符：3..toString()=&gt;’3’、var a=3;a.toString()=&gt;’3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var-x-y-1-gt-y是全局变量"><span class="toc-text">{var x=y=1;}=&gt;y是全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function的实例的length放回参数的个数"><span class="toc-text">Function的实例的length放回参数的个数</span></a></li></ol></li></ol>
   </div>
 
 
@@ -219,8 +219,9 @@
 
   <div class="article-content">
     
-      <p><font face="微软雅黑"></font></p>
-<h2 id="前端基础"><a href="#前端基础" class="headerlink" title="前端基础"></a>前端基础</h2><h3 id="1-stopPropagation和stopImmediatePropagaion的区别"><a href="#1-stopPropagation和stopImmediatePropagaion的区别" class="headerlink" title="1. stopPropagation和stopImmediatePropagaion的区别"></a>1. stopPropagation和stopImmediatePropagaion的区别</h3><p>两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行<br><strong>补充：</strong></p>
+      <hr>
+<h2 id="title-前端基础-1"><a href="#title-前端基础-1" class="headerlink" title="title:前端基础-1"></a>title:前端基础-1</h2><p><font face="微软雅黑"></font></p>
+<h3 id="1-stopPropagation和stopImmediatePropagaion的区别"><a href="#1-stopPropagation和stopImmediatePropagaion的区别" class="headerlink" title="1. stopPropagation和stopImmediatePropagaion的区别"></a>1. stopPropagation和stopImmediatePropagaion的区别</h3><p>两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行<br><strong>补充：</strong></p>
 <ul>
 <li>DOM中的事件对象：（符合W3C标准）<br> preventDefault()        取消事件默认行为<br> stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。<br> stopPropagation()      取消事件冒泡对当前节点无影响。</li>
 <li>IE中的事件对象：<br> cancelBubble()          取消事件冒泡<br> returnValue()             取消事件默认行为<h3 id="2-盒子模型"><a href="#2-盒子模型" class="headerlink" title="2. 盒子模型"></a>2. 盒子模型</h3></li>
