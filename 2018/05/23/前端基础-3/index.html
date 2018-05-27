@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端基础-3 | yndtemps</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="lmj,html+css,编译原理,后端,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="1. null和undefined的区别？null是一个表示”无”的对象，转为数值时为0undefined是一个表示”无”的原始值，转为数值时为NaN 当声明的变量还未被初始化时，变量的默认值为undefinednull用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象 undefined表示 “缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：  变量被声明了，但没有赋值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础-3">
+<meta property="og:url" content="http://minjin29.cn/archives/2018/05/23/前端基础-3/index.html">
+<meta property="og:site_name" content="yndtemps">
+<meta property="og:description" content="1. null和undefined的区别？null是一个表示”无”的对象，转为数值时为0undefined是一个表示”无”的原始值，转为数值时为NaN 当声明的变量还未被初始化时，变量的默认值为undefinednull用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象 undefined表示 “缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：  变量被声明了，但没有赋值">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-25T11:40:57.659Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端基础-3">
+<meta name="twitter:description" content="1. null和undefined的区别？null是一个表示”无”的对象，转为数值时为0undefined是一个表示”无”的原始值，转为数值时为NaN 当声明的变量还未被初始化时，变量的默认值为undefinednull用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象 undefined表示 “缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：  变量被声明了，但没有赋值">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal_style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-null和undefined的区别？"><span class="toc-text">1. null和undefined的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-哪些操作会造成内存泄露？"><span class="toc-text">2. 哪些操作会造成内存泄露？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-js本地对象、内置对象和宿主对象？"><span class="toc-text">3. js本地对象、内置对象和宿主对象？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#本地对象："><span class="toc-text">本地对象：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#内置对象"><span class="toc-text">内置对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#宿主对象"><span class="toc-text">宿主对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-性能优化的方法？"><span class="toc-text">4. 性能优化的方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-json和jsonp的区别？"><span class="toc-text">5. json和jsonp的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-页面从输入url到页面加载完成，这个过程发生了什么？"><span class="toc-text">6. 页面从输入url到页面加载完成，这个过程发生了什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-前端的安全问题"><span class="toc-text">7. 前端的安全问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-什么是-“use-strict”-使用它的好处和坏处分别是什么？"><span class="toc-text">8.什么是 “use strict”; ? 使用它的好处和坏处分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-GET和POST的区别，何时使用POST？"><span class="toc-text">9.GET和POST的区别，何时使用POST？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-通用的事件侦听器函数"><span class="toc-text">10. 通用的事件侦听器函数</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-前端基础-3" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">前端基础-3</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.05.23</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>yndtemps</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://minjie29.cn/archives//2018/05/23/前端基础-3/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><font face="微软雅黑"></font></p>
+<h3 id="1-null和undefined的区别？"><a href="#1-null和undefined的区别？" class="headerlink" title="1. null和undefined的区别？"></a><font color="green">1. null和undefined的区别？</font></h3><p>null是一个表示”无”的对象，转为数值时为0<br>undefined是一个表示”无”的原始值，转为数值时为NaN</p>
+<p>当声明的变量还未被初始化时，变量的默认值为undefined<br>null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象</p>
+<p>undefined表示 “缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</p>
+<ul>
+<li>变量被声明了，但没有赋值时，就等于 undefined</li>
+<li>调用函数时，应该提供的参数没有提供，该参数等于 undefined</li>
+<li>对象没有赋值的属性，该属性的值为 undefined</li>
+<li>函数没有返回值时，默认返回 undefined</li>
+</ul>
+<p>null表示“没有对象”，即该处不应该有值。典型用法是：</p>
+<ul>
+<li>作为函数的参数，表示该函数的参数不是对象</li>
+<li>作为对象原型链的终点</li>
+</ul>
+<h3 id="2-哪些操作会造成内存泄露？"><a href="#2-哪些操作会造成内存泄露？" class="headerlink" title="2. 哪些操作会造成内存泄露？"></a><font color="green">2. 哪些操作会造成内存泄露？</font></h3><p>内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。<br>垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。</p>
+<ul>
+<li>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。</li>
+<li>闭包</li>
+<li>控制台日志</li>
+<li>循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）</li>
+</ul>
+<h3 id="3-js本地对象、内置对象和宿主对象？"><a href="#3-js本地对象、内置对象和宿主对象？" class="headerlink" title="3. js本地对象、内置对象和宿主对象？"></a><font color="green">3. js本地对象、内置对象和宿主对象？</font></h3><p>该部分内容转自：<a href="https://www.cnblogs.com/luckyXcc/p/5892896.html" target="_blank" rel="noopener">https://www.cnblogs.com/luckyXcc/p/5892896.html</a></p>
+<h5 id="本地对象："><a href="#本地对象：" class="headerlink" title="本地对象："></a>本地对象：</h5><p>ECMA-262 把本地对象（native object）定义为“独立于宿主环境的 ECMAScript 实现提供的对象”。如：<br>Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError</p>
+<h5 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h5><p>ECMA-262 只定义了两个内置对象，即 Global 和 Math<br>Global对象是ECMAScript中最特别的对象，因为实际上它根本不存在，但大家要清楚，在ECMAScript中，不存在独立的函数，所有函数都必须是某个对象的方法。类似于isNaN()、parseInt()和parseFloat()方法等，看起来都是函数，而实际上，它们都是Global对象的方法。</p>
+<h5 id="宿主对象"><a href="#宿主对象" class="headerlink" title="宿主对象"></a>宿主对象</h5><p>window和document</p>
+<h3 id="4-性能优化的方法？"><a href="#4-性能优化的方法？" class="headerlink" title="4. 性能优化的方法？"></a><font color="green">4. 性能优化的方法？</font></h3><ul>
+<li>减少http请求次数：CSS Sprites, JS、CSS 源码压缩、图片大小控制合适；网页 Gzip，CDN 托管，data 缓存 ，图片服务器</li>
+<li>前端模板 JS + 数据，减少由于HTML标签导致的带宽浪费，前端用变量保存 AJAX 请求结果，每次操作本地变量，不用请求，减少请求次数</li>
+<li>用 innerHTML 代替 DOM 操作，减少 DOM 操作次数，优化 javascript 性能</li>
+<li>当需要设置的样式很多时设置 className 而不是直接操作 style</li>
+<li>少用全局变量、缓存DOM节点查找的结果。减少 IO 读取操作</li>
+<li>避免使用 CSS Expression（css表达式)又称 Dynamic properties(动态属性)</li>
+<li>图片预加载，将样式表放在顶部，将脚本放在底部，加上时间戳</li>
+</ul>
+<h3 id="5-json和jsonp的区别？"><a href="#5-json和jsonp的区别？" class="headerlink" title="5. json和jsonp的区别？"></a>5. json和jsonp的区别？</h3><p>json不能解决跨域的问题，为解决这个问题，采用jsonp数据交互协议。众所周知，js文件的调用不受跨域与否的限制，因此如果想通过纯web端跨域访问数据，只能在远程服务器上设法<strong>将json数据封装进js格式的文件中</strong>，供客户端调用和进一步处理，这就是jsonp协议的原理。该协议的一个要点就是允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名来包裹住JSON数据，这样客户端就可以随意定制自己的函数来自动处理返回数据了。</p>
+<h3 id="6-页面从输入url到页面加载完成，这个过程发生了什么？"><a href="#6-页面从输入url到页面加载完成，这个过程发生了什么？" class="headerlink" title="6. 页面从输入url到页面加载完成，这个过程发生了什么？"></a>6. 页面从输入url到页面加载完成，这个过程发生了什么？</h3><p>分为4个步骤：</p>
+<ol>
+<li>当发送一个 URL 请求时，不管这个 URL 是 Web 页面的 URL 还是 Web 页面上每个资源的 URL，浏览器都会开启一个线程来处理这个请求，同时在远程 DNS 服务器上启动一个 DNS 查询。这能使浏览器获得请求对应的 IP 地址。</li>
+<li>浏览器与远程 Web 服务器通过 TCP 三次握手协商来建立一个 TCP/IP 连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</li>
+<li>一旦 TCP/IP 连接建立，浏览器会通过该连接向远程服务器发送 HTTP 的 GET 请求。远程服务器找到资源并使用 HTTP 响应返回该资源，值为 200 的 HTTP 响应状态表示一个正确的响应。</li>
+<li>此时，Web 服务器提供资源服务，客户端开始下载资源。</li>
+</ol>
+<p>请求返回后，便进入了我们关注的前端模块<br>简单来说，浏览器会解析 HTML 生成 DOM Tree，其次会根据 CSS 生成 CSS Rule Tree，而 javascript 又可以根据 DOM API 操作 DOM</p>
+<h3 id="7-前端的安全问题"><a href="#7-前端的安全问题" class="headerlink" title="7. 前端的安全问题"></a>7. 前端的安全问题</h3><ul>
+<li><strong>xss攻击</strong>。即跨站脚本攻击（Cross Site Scripting）。这类安全问题发生的本质原因在于，浏览器错误的将攻击者提供的用户输入数据当做JavaScript脚本给执行了。<br><strong>防御措施：</strong>输入过滤、进行前端输出编码、httpOnly Cookie</li>
+<li><p><strong>iframe有风险</strong>——有些时候我们的前端页面需要用到第三方提供的页面组件，通常会以iframe的方式引入。典型的例子是使用iframe在页面上添加第三方提供的广告、天气预报、社交分享插件等等。<br>iframe在给我们的页面带来更多丰富的内容和能力的同时，也带来了不少的安全隐患。因为iframe中的内容是由第三方来提供的，默认情况下他们不受我们的控制，他们可以在iframe中运行JavaScirpt脚本、Flash插件、弹出对话框等等，这可能会破坏前端用户体验。<br><strong>防御：</strong><br>在HTML5中，iframe有了一个叫做sandbox的安全属性，通过它可以对iframe的行为进行各种限制，充分实现“最小权限“原则。使用sandbox的最简单的方式就是只在iframe元素中添加上这个关键词就好，就像下面这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe sandbox src=&quot;...&quot;&gt; ... &lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>CSRF攻击</strong><br><a href="https://blog.csdn.net/ynd_sg/article/details/80427882" target="_blank" rel="noopener">https://blog.csdn.net/ynd_sg/article/details/80427882</a></p>
+</li>
+<li>文件上传漏洞<br>解决措施：(1)检查服务器是否判断了上传文件类型及后缀。 (2) 定义上传文件类型白名单，即只允许白名单里面类型的文件上传。 (3) 文件上传目录禁止执行脚本解析，避免攻击者进行二次攻击。 </li>
+</ul>
+<h3 id="8-什么是-“use-strict”-使用它的好处和坏处分别是什么？"><a href="#8-什么是-“use-strict”-使用它的好处和坏处分别是什么？" class="headerlink" title="8.什么是 “use strict”; ? 使用它的好处和坏处分别是什么？"></a>8.什么是 “use strict”; ? 使用它的好处和坏处分别是什么？</h3><p>ECMAscript 5添加了第二种运行模式：”严格模式”（strict mode）。顾名思义，这种模式使得Javascript在更严格的条件下运行。</p>
+<p>设立”严格模式”的目的，主要有以下几个：</p>
+<ul>
+<li>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;</li>
+<li>消除代码运行的一些不安全之处，保证代码运行的安全；</li>
+<li>提高编译器效率，增加运行速度；</li>
+<li>为未来新版本的Javascript做好铺垫。<br>注：经过测试 IE6,7,8,9 均不支持严格模式。</li>
+</ul>
+<p>缺点：<br>现在网站的 JS 都会进行压缩，一些文件用了严格模式，而另一些没有。这时这些本来是严格模式的文件，被 merge 后，这个串就到了文件的中间，不仅没有指示严格模式，反而在压缩后浪费了字节。</p>
+<h3 id="9-GET和POST的区别，何时使用POST？"><a href="#9-GET和POST的区别，何时使用POST？" class="headerlink" title="9.GET和POST的区别，何时使用POST？"></a>9.GET和POST的区别，何时使用POST？</h3><p>GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符<br>POST：一般用于修改服务器上的资源，对所发送的信息没有限制</p>
+<p>GET方式需要使用 Request.QueryString 来取得变量的值<br>POST方式通过 Request.Form 来获取变量的值<br>也就是说 Get 是通过地址栏来传值，而 Post 是通过提交表单来传值。</p>
+<p>在以下情况中，请使用 POST 请求：</p>
+<ul>
+<li>无法使用缓存文件（更新服务器上的文件或数据库）</li>
+<li>向服务器发送大量数据（POST 没有数据量限制）</li>
+<li>发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</li>
+</ul>
+<h3 id="10-通用的事件侦听器函数"><a href="#10-通用的事件侦听器函数" class="headerlink" title="10. 通用的事件侦听器函数"></a>10. 通用的事件侦听器函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">// event(事件)工具集，来源：github.com/markyun</span><br><span class="line">markyun.Event = &#123;</span><br><span class="line">    // 页面加载完成后</span><br><span class="line">    readyEvent : function(fn) &#123;</span><br><span class="line">        if (fn==null) &#123;</span><br><span class="line">            fn=document;</span><br><span class="line">        &#125;</span><br><span class="line">        var oldonload = window.onload;</span><br><span class="line">        if (typeof window.onload != &apos;function&apos;) &#123;</span><br><span class="line">            window.onload = fn;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            window.onload = function() &#123;</span><br><span class="line">                oldonload();</span><br><span class="line">                fn();</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 视能力分别使用dom0||dom2||IE方式 来绑定事件</span><br><span class="line">    // 参数： 操作的元素,事件名称 ,事件处理程序</span><br><span class="line">    addEvent : function(element, type, handler) &#123;</span><br><span class="line">        if (element.addEventListener) &#123;</span><br><span class="line">            //事件类型、需要执行的函数、是否捕捉</span><br><span class="line">            element.addEventListener(type, handler, false);</span><br><span class="line">        &#125; else if (element.attachEvent) &#123;</span><br><span class="line">            element.attachEvent(&apos;on&apos; + type, function() &#123;</span><br><span class="line">                handler.call(element);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            element[&apos;on&apos; + type] = handler;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 移除事件</span><br><span class="line">    removeEvent : function(element, type, handler) &#123;</span><br><span class="line">        if (element.removeEnentListener) &#123;</span><br><span class="line">            element.removeEnentListener(type, handler, false);</span><br><span class="line">        &#125; else if (element.detachEvent) &#123;</span><br><span class="line">            element.detachEvent(&apos;on&apos; + type, handler);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            element[&apos;on&apos; + type] = null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, </span><br><span class="line">    // 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)</span><br><span class="line">    stopPropagation : function(ev) &#123;</span><br><span class="line">        if (ev.stopPropagation) &#123;</span><br><span class="line">            ev.stopPropagation();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            ev.cancelBubble = true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 取消事件的默认行为</span><br><span class="line">    preventDefault : function(event) &#123;</span><br><span class="line">        if (event.preventDefault) &#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            event.returnValue = false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 获取事件目标</span><br><span class="line">    getTarget : function(event) &#123;</span><br><span class="line">        return event.target || event.srcElement;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 获取event对象的引用，取到事件的所有信息，确保随时能使用event；</span><br><span class="line">    getEvent : function(e) &#123;</span><br><span class="line">        var ev = e || window.event;</span><br><span class="line">        if (!ev) &#123;</span><br><span class="line">            var c = this.getEvent.caller;</span><br><span class="line">            while (c) &#123;</span><br><span class="line">                ev = c.arguments[0];</span><br><span class="line">                if (ev &amp;&amp; Event == ev.constructor) &#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">                c = c.caller;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    
+  </div>
+
+  
+      <div class="git"></div>
+  
+
+</article>
+
+
+   
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/05/23/前端基础-2/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'lmj';
+    
+    var disqus_url = 'http://minjin29.cn/archives/2018/05/23/前端基础-3/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//lmj.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

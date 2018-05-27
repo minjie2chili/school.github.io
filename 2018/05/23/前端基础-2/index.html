@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端基础-2 | yndtemps</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="lmj,html+css,编译原理,后端,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="1. css基础1) css可继承的样式：font-size、font-family、color、text-indent（都是关于文本字体设置） 2)css不可继承的样式：border、width、height、padding、margin 3）优先级算法： 优先级就近原则，同权重情况下样式定义最近者为准; 载入样式以最后载入的定位为准; !important &amp;gt;  id &amp;gt; cla">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础-2">
+<meta property="og:url" content="http://minjin29.cn/archives/2018/05/23/前端基础-2/index.html">
+<meta property="og:site_name" content="yndtemps">
+<meta property="og:description" content="1. css基础1) css可继承的样式：font-size、font-family、color、text-indent（都是关于文本字体设置） 2)css不可继承的样式：border、width、height、padding、margin 3）优先级算法： 优先级就近原则，同权重情况下样式定义最近者为准; 载入样式以最后载入的定位为准; !important &amp;gt;  id &amp;gt; cla">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-23T08:07:04.817Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端基础-2">
+<meta name="twitter:description" content="1. css基础1) css可继承的样式：font-size、font-family、color、text-indent（都是关于文本字体设置） 2)css不可继承的样式：border、width、height、padding、margin 3）优先级算法： 优先级就近原则，同权重情况下样式定义最近者为准; 载入样式以最后载入的定位为准; !important &amp;gt;  id &amp;gt; cla">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal_style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-css基础"><span class="toc-text">1. css基础</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-css可继承的样式："><span class="toc-text">1) css可继承的样式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-css不可继承的样式："><span class="toc-text">2)css不可继承的样式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3）优先级算法："><span class="toc-text">3）优先级算法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4）css3新特性"><span class="toc-text">4）css3新特性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5）初始化样式"><span class="toc-text">5）初始化样式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-html5介绍"><span class="toc-text">5. html5介绍</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-前端基础-2" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">前端基础-2</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.05.23</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>yndtemps</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://minjie29.cn/archives//2018/05/23/前端基础-2/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><font face="微软雅黑"></font></p>
+<h3 id="1-css基础"><a href="#1-css基础" class="headerlink" title="1. css基础"></a><font color="green">1. css基础</font></h3><h5 id="1-css可继承的样式："><a href="#1-css可继承的样式：" class="headerlink" title="1) css可继承的样式："></a>1) css可继承的样式：</h5><p>font-size、font-family、color、text-indent（都是关于文本字体设置）</p>
+<h5 id="2-css不可继承的样式："><a href="#2-css不可继承的样式：" class="headerlink" title="2)css不可继承的样式："></a>2)css不可继承的样式：</h5><p>border、width、height、padding、margin</p>
+<h5 id="3）优先级算法："><a href="#3）优先级算法：" class="headerlink" title="3）优先级算法："></a>3）优先级算法：</h5><ul>
+<li>优先级就近原则，同权重情况下样式定义最近者为准;</li>
+<li>载入样式以最后载入的定位为准;</li>
+<li>!important &gt;  id &gt; class &gt; tag  </li>
+<li>important 比 内联优先级高，但内联比 id 要高<h5 id="4）css3新特性"><a href="#4）css3新特性" class="headerlink" title="4）css3新特性"></a>4）css3新特性</h5>多引用自：<a href="https://www.nowcoder.com/ta/front-end-interview" target="_blank" rel="noopener">https://www.nowcoder.com/ta/front-end-interview</a></li>
+<li>CSS3实现圆角（border-radius），阴影（box-shadow），</li>
+<li>对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）</li>
+<li>transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);// 旋转,缩放,定位,倾斜</li>
+<li>增加了更多的CSS选择器  多背景 rgba</li>
+<li>在CSS3中唯一引入的伪类是 ::selection.</li>
+<li>媒体查询，多栏布局</li>
+<li>border-image<h5 id="5）初始化样式"><a href="#5）初始化样式" class="headerlink" title="5）初始化样式"></a>5）初始化样式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td</span><br><span class="line">&#123;margin:0;padding:0&#125;table&#123;border-collapse:collapse;border-spacing:0&#125;fieldset,img&#123;border:0&#125;</span><br><span class="line">address,caption,cite,code,dfn,em,strong,th,var&#123;font-style:normal;font-weight:normal&#125;ol,ul&#123;list-style:none&#125;</span><br><span class="line">caption,th&#123;text-align:left&#125;h1,h2,h3,h4,h5,h6&#123;font-size:100%;font-weight:normal&#125;q:before,q:after&#123;content:&apos;&apos;&#125;</span><br><span class="line">abbr,acronym&#123;border:0;font-variant:normal&#125;sup&#123;vertical-align:text-top&#125;sub&#123;vertical-align:text-bottom&#125;</span><br><span class="line">input,textarea,select&#123;font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%&#125;legend&#123;color:#000&#125;</span><br><span class="line">#yui3-css-stamp.css-reset&#123;display:none&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>或者淘宝样式初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td &#123; margin:0; padding:0; &#125;</span><br><span class="line">body, button, input, select, textarea &#123; font:12px/1.5tahoma, arial, \5b8b\4f53; &#125;</span><br><span class="line">h1, h2, h3, h4, h5, h6&#123; font-size:100%; &#125;</span><br><span class="line">address, cite, dfn, em, var &#123; font-style:normal; &#125;</span><br><span class="line">code, kbd, pre, samp &#123; font-family:couriernew, courier, monospace; &#125;</span><br><span class="line">small&#123; font-size:12px; &#125;</span><br><span class="line">ul, ol &#123; list-style:none; &#125;</span><br><span class="line">a &#123; text-decoration:none; &#125;</span><br><span class="line">a:hover &#123; text-decoration:underline; &#125;</span><br><span class="line">sup &#123; vertical-align:text-top; &#125;</span><br><span class="line">sub&#123; vertical-align:text-bottom; &#125;</span><br><span class="line">legend &#123; color:#000; &#125;</span><br><span class="line">fieldset, img &#123; border:0; &#125;</span><br><span class="line">button, input, select, textarea &#123; font-size:100%; &#125;</span><br><span class="line">table &#123; border-collapse:collapse; border-spacing:0; &#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">### &lt;font color=&quot;green&quot;&gt;2. html语义化&lt;/font&gt;</span><br><span class="line">**意义：**</span><br><span class="line">（1）、为了在没有css代码时，也能呈现很好的内容结构，代码结构，以至于达到没有编程基础的非技术人员，也能看懂一二。（其实，就是为了不穿CSS外衣，裸奔依然好看）。</span><br><span class="line">（2）、提高用户体验，比如：title，alt用于解释名词和图片信息。</span><br><span class="line">（3）、利于SEO，语义化能和搜索引擎建立良好的联系，有利于爬虫抓取更多的有效信息。爬虫依赖于标签来确定上下文和各个关键字的权重。</span><br><span class="line">（4）、方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以语义的方式来渲染网页。</span><br><span class="line">（5）、便于团队开发和维护，语义化更具可读性，如果遵循W3C标准的团队都遵循这个标准，可以减少差异化，利于规范化。</span><br><span class="line">**怎么做：**</span><br><span class="line">减少没有语义的标签，如div、span、纯样式标签（b、font、u）</span><br><span class="line"></span><br><span class="line">### &lt;font color=&quot;green&quot;&gt;3. html和xhtml的区别&lt;/font&gt;</span><br><span class="line">- XHTML 元素必须被正确地嵌套。</span><br><span class="line">- XHTML 元素必须被关闭。</span><br><span class="line">- 标签名必须用小写字母。</span><br><span class="line">- XHTML 文档必须拥有根元素。</span><br><span class="line"></span><br><span class="line">### &lt;font color=&quot;green&quot;&gt;4. html常见兼容性问题&lt;/font&gt;</span><br><span class="line">1. png24位的图片在iE6浏览器上出现背景</span><br><span class="line">解决方案：做成PNG8，也可以引用一段脚本处理.</span><br><span class="line"></span><br><span class="line">2. 浏览器默认的margin和padding不同</span><br><span class="line">解决方案：加一个全局的 *&#123;margin:0;padding:0;&#125; 来统一。</span><br><span class="line"></span><br><span class="line">3. IE6双边距bug：在IE6下，如果对元素设置了浮动，同时又设置了margin-left或margin-right，margin值会加倍。</span><br><span class="line"></span><br><span class="line">4.</span><br></pre></td></tr></table></figure></p>
+<p>#box{ float:left; width:10px; margin:0 0 0 10px;}<br><code>`</code><br>这种情况之下IE会产生20px的距离<br>解决方案：在float的标签样式控制中加入 _display:inline; 将其转化为行内属性。( _ 这个符号只有ie6会识别)</p>
+<ol start="5">
+<li><p>渐进识别的方式，从总体中逐渐排除局部。<br>首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。<br>接着，再次使用 “+” 将IE8和IE7、IE6分离开来，这样IE8已经独立识别。<br>.bb{<br> background-color:#f1ee18; /<em>所有识别</em>/<br> .background-color:#00deff\9; /<em>IE6、7、8识别</em>/<br> +background-color:#a200ff; /<em>IE6、7识别</em>/<br> _background-color:#1e0bd1; /<em>IE6识别</em>/<br>} </p>
+</li>
+<li><p>IE下，可以使用获取常规属性的方法来获取自定义属性，也可以使用 getAttribute() 获取自定义属性；Firefox下,只能使用getAttribute()获取自定义属性<br>解决方法：统一通过getAttribute()获取自定义属性</p>
+</li>
+<li><p>IE下，event对象有 x、y 属性，但是没有 pageX、pageY属性; Firefox下，event对象有 pageX、pageY 属性，但是没有 x、y 属性<br>解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。</p>
+</li>
+<li><p>Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示<br>解决方法：可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决</p>
+</li>
+<li><p>超链接访问过后 hover 样式就不出现了，被点击访问过的超链接样式不在具有 hover 和 active 了<br>解决方法：改变CSS属性的排列顺序 L-V-H-A</p>
+</li>
+</ol>
+<ul>
+<li>a:link {}</li>
+<li>a:visited {}</li>
+<li>a:hover {}</li>
+<li>a:active {}</li>
+</ul>
+<p>10.怪异模式问题：漏写 DTD 声明，Firefox 仍然会按照标准模式来解析网页，但在 IE 中会触发怪异模式。为避免怪异模式给我们带来不必要的麻烦，最好养成书写 DTD 声明的好习惯。现在可以使用<a href="http://www.w3.org/TR/html5/single-page.html" target="_blank" rel="noopener">html5</a> 推荐的写法：&lt;!DOCTYPE html&gt;</p>
+<p>11.上下margin重合问题：ie和ff都存在，相邻的两个div的margin-left和margin-right不会重合，但是margin-top和margin-bottom却会发生重合。<br>解决方法：养成良好的代码编写习惯，同时采用margin-top或者同时采用margin-bottom。</p>
+<p>12.ie6对png图片格式支持不好<br>解决方案：引用一段脚本处理</p>
+<h3 id="5-html5介绍"><a href="#5-html5介绍" class="headerlink" title="5. html5介绍"></a><font color="green">5. html5介绍</font></h3><p>HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。</p>
+<ol>
+<li>拖拽释放(Drag and drop) API </li>
+<li>语义化更好的内容标签（header,nav,footer,aside,article,section）</li>
+<li>音频、视频API(audio,video)</li>
+<li>画布(Canvas) API</li>
+<li>地理(Geolocation) API</li>
+<li>本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；</li>
+<li>sessionStorage 的数据在浏览器关闭后自动删除</li>
+<li>表单控件，calendar、date、time、email、url、search  </li>
+<li>新的技术webworker, websocket, Geolocation</li>
+</ol>
+<p>移除的元素：</p>
+<ol>
+<li>纯表现的元素：basefont，big，center，font, s，strike，tt，u；</li>
+<li>对可用性产生负面影响的元素：frame，frameset，noframes；</li>
+</ol>
+<hr>
+
+    
+  </div>
+
+  
+      <div class="git"></div>
+  
+
+</article>
+
+
+   
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/05/21/前端基础/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/05/23/前端基础-3/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'lmj';
+    
+    var disqus_url = 'http://minjin29.cn/archives/2018/05/23/前端基础-2/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//lmj.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

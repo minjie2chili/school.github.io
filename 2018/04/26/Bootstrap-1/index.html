@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bootstrap学习 | yndtemps</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="tag1," />
+  
+
+  <meta name="description" content="1. 默认表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quo">
+<meta name="keywords" content="tag1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap学习">
+<meta property="og:url" content="http://minjin29.cn/archives/2018/04/26/Bootstrap-1/index.html">
+<meta property="og:site_name" content="yndtemps">
+<meta property="og:description" content="1. 默认表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-26T11:29:16.697Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bootstrap学习">
+<meta name="twitter:description" content="1. 默认表单最基本的表单是垂直表单，如下：1234567891011121314151617&amp;lt;form role=&amp;quot;form&amp;quot;&amp;gt;  &amp;lt;div class=&amp;quot;form-group&amp;quot;&amp;gt;    &amp;lt;label for=&amp;quot;name&amp;quot;&amp;gt;名称&amp;lt;/label&amp;gt;    &amp;lt;input type=&amp;quo">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal_style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#表单控件大小"><span class="toc-text">表单控件大小</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#帮助文本：help-block"><span class="toc-text">帮助文本：help-block</span></a></li></ol></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Bootstrap-1" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Bootstrap学习</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.04.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>yndtemps</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://minjie29.cn/archives//2018/04/26/Bootstrap-1/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><font color="green">1. 默认表单</font><br>最基本的表单是垂直表单，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;form role=&quot;form&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;name&quot;&gt;名称&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;请输入名称&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;inputfile&quot;&gt;文件输入&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; id=&quot;inputfile&quot;&gt;</span><br><span class="line">    &lt;p class=&quot;help-block&quot;&gt;这里是块级帮助文本的实例。&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;checkbox&quot;&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">      &lt;input type=&quot;checkbox&quot;&gt;请打勾</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>form-control:换行+填充整行<br>form-group使得与下面的元素保持最好的间距，由于用md编辑，实测只能在浏览器看到：</p>
+<p><form role="form"><br>  <div class="form-group"><br>    <label for="name">名称</label><br>    <input type="text" class="form-control" id="name" placeholder="请输入名称"><br>  </div><div class="form-group"><label for="inputfile">文件输入</label><br>    <input type="file" id="inputfile"><p class="help-block">这里是块级帮助文本的实例。</p></div><div class="checkbox"><label> <input type="checkbox">请打勾</label><br>  </div><button type="submit" class="btn btn-default">提交</button><br></form></p>
+<p><font color="red">2. 内联表单</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class=&quot;form-inline&quot; role=&quot;form&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label class=&quot;sr-only&quot; for=&quot;name&quot;&gt;名称&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;请输入名称&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label class=&quot;sr-only&quot; for=&quot;inputfile&quot;&gt;文件输入&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; id=&quot;inputfile&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;checkbox&quot;&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">      &lt;input type=&quot;checkbox&quot;&gt;请打勾</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>与普通form相比，多了form-inline以及label加了sr-only的class，这个class是指screen read only，为了增强可访问性，为残障人士设计，正常并不显示</p>
+<p>3.label-control以及form-control-static<br>label-control为右对齐<br>当需要在一个水平表单内的表单标签后放置纯文本时，在 </p><p> 上使用 class .form-control-static。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label class=&quot;col-sm-2 control-label&quot;&gt;Email&lt;/label&gt;</span><br><span class="line">    &lt;div class=&quot;col-sm-10&quot;&gt;</span><br><span class="line">      &lt;p class=&quot;form-control-static&quot;&gt;email@example.com&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;inputPassword&quot; class=&quot;col-sm-2 control-label&quot;&gt;密码&lt;/label&gt;</span><br><span class="line">    &lt;div class=&quot;col-sm-10&quot;&gt;</span><br><span class="line">      &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;inputPassword&quot; placeholder=&quot;请输入密码&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##<font color="blue">其他class</font><br>focuseInput：聚焦<br>disabledInput：禁用输入（其实都只加入disabled就能禁用）<br>disabledSelect：禁止选择</p>
+<h3 id="表单控件大小"><a href="#表单控件大小" class="headerlink" title="表单控件大小"></a>表单控件大小</h3><p>input-lg：<br>input-sm<br>.col-lg-2</p>
+<h6 id="帮助文本：help-block"><a href="#帮助文本：help-block" class="headerlink" title="帮助文本：help-block"></a>帮助文本：help-block</h6>
+    
+  </div>
+
+  
+      <div class="git"></div>
+  
+
+</article>
+
+
+   
+   
+  <div class="box-prev-next clearfix">
+    <a class="hide pull-left" href="/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/04/26/ajax/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'lmj';
+    
+    var disqus_url = 'http://minjin29.cn/archives/2018/04/26/Bootstrap-1/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//lmj.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

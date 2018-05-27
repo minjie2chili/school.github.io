@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端基础-1 | yndtemps</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="lmj,html+css,编译原理,后端,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。 stopProp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础-1">
+<meta property="og:url" content="http://minjin29.cn/archives/2018/05/21/前端基础/index.html">
+<meta property="og:site_name" content="yndtemps">
+<meta property="og:description" content="1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。 stopProp">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-23T07:00:01.581Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端基础-1">
+<meta name="twitter:description" content="1. stopPropagation和stopImmediatePropagaion的区别两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行补充：  DOM中的事件对象：（符合W3C标准） preventDefault()        取消事件默认行为 stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。 stopProp">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal_style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-stopPropagation和stopImmediatePropagaion的区别"><span class="toc-text">1. stopPropagation和stopImmediatePropagaion的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-盒子模型"><span class="toc-text">2. 盒子模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Request-Headers和Response-Headers"><span class="toc-text">3. Request Headers和Response Headers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-http状态码："><span class="toc-text">4. http状态码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-prototype-gt"><span class="toc-text">Array.prototype=&gt;[]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字转字符：3-toString-gt-’3’、var-a-3-a-toString-gt-’3’"><span class="toc-text">数字转字符：3..toString()=&gt;’3’、var a=3;a.toString()=&gt;’3’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var-x-y-1-gt-y是全局变量"><span class="toc-text">{var x=y=1;}=&gt;y是全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function的实例的length放回参数的个数"><span class="toc-text">Function的实例的length放回参数的个数</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-前端基础" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">前端基础-1</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.05.21</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>yndtemps</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://minjie29.cn/archives//2018/05/21/前端基础/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><font face="微软雅黑"></font></p>
+<h3 id="1-stopPropagation和stopImmediatePropagaion的区别"><a href="#1-stopPropagation和stopImmediatePropagaion的区别" class="headerlink" title="1. stopPropagation和stopImmediatePropagaion的区别"></a>1. stopPropagation和stopImmediatePropagaion的区别</h3><p>两者都能阻止事件流冒泡，但后者会让当前对象的后面的事件监听都无法执行<br><strong>补充：</strong></p>
+<ul>
+<li>DOM中的事件对象：（符合W3C标准）<br> preventDefault()        取消事件默认行为<br> stopImmediatePropagation() 取消事件冒泡同时阻止当前节点上的事件处理程序被调用。<br> stopPropagation()      取消事件冒泡对当前节点无影响。</li>
+<li>IE中的事件对象：<br> cancelBubble()          取消事件冒泡<br> returnValue()             取消事件默认行为</li>
+</ul>
+<h3 id="2-盒子模型"><a href="#2-盒子模型" class="headerlink" title="2. 盒子模型"></a>2. 盒子模型</h3><ul>
+<li>盒子模型包括margin、border、padding、content，盒子总宽度为：<br>margin+border+padding+width<br>其中：</li>
+<li>标准盒子模型content不包括任何东西</li>
+<li>IE的盒子模型content包括border和padding</li>
+</ul>
+<h3 id="3-Request-Headers和Response-Headers"><a href="#3-Request-Headers和Response-Headers" class="headerlink" title="3. Request Headers和Response Headers"></a>3. Request Headers和Response Headers</h3><p><strong>请求：</strong><br>Accept：告诉服务器，客户机支持的数据类型；<br>Accept-Encoding：告诉服务器客户机支持的数据压缩格式；<br>cache-control：缓存控制：<br>    1）no-cache：强制每次请求直接发送给源服务器，不经过本地缓存校验；<br>    2）max-age&gt;0 直接从浏览器缓存中提取；<br>    3）max-age&lt;=0 向server发送http请求，该资源是否已修改，有的话返回200，没有返回304<br><strong>响应：</strong><br>Content-Encoding：服务器告诉浏览器数据压缩格式<br>Content-length：回送数据长度<br>Content-type：回送数据类型</p>
+<h3 id="4-http状态码："><a href="#4-http状态码：" class="headerlink" title="4. http状态码："></a>4. http状态码：</h3><p>该内容源自：<a href="https://blog.csdn.net/dufufd/article/details/53112184" target="_blank" rel="noopener">https://blog.csdn.net/dufufd/article/details/53112184</a><br><strong>2开头 （请求成功）</strong>表示成功处理了请求的状态代码。</p>
+<p>200   （成功）  服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。<br>201   （已创建）  请求成功并且服务器创建了新的资源。<br>202   （已接受）  服务器已接受请求，但尚未处理。<br>203   （非授权信息）  服务器已成功处理了请求，但返回的信息可能来自另一来源。<br>204   （无内容）  服务器成功处理了请求，但没有返回任何内容。<br>205   （重置内容） 服务器成功处理了请求，但没有返回任何内容。<br>206   （部分内容）  服务器成功处理了部分 GET 请求。</p>
+<p><strong>3开头 （请求被重定向）</strong>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</p>
+<p>300   （多种选择）  针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。<br>301   （永久移动）  请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。<br>302   （临时移动）  服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>303   （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。<br>304   （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。<br>305   （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。<br>307   （临时重定向）  服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<p><strong>4开头 （请求错误）</strong>这些状态代码表示请求可能出错，妨碍了服务器的处理。</p>
+<p>400   （错误请求） 服务器不理解请求的语法。<br>401   （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>403   （禁止） 服务器拒绝请求。<br>404   （未找到） 服务器找不到请求的网页。<br>405   （方法禁用） 禁用请求中指定的方法。 </p>
+<p><strong>5开头（服务器错误）</strong>这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
+<p>500   （服务器内部错误）  服务器遇到错误，无法完成请求。<br>501   （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。<br>502   （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。<br>503   （服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。<br>504   （网关超时）  服务器作为网关或代理，但是没有及时从上游服务器收到请求。<br>505   （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</p>
+<p>另话：switch使用恒等于===判断里面的参数，所有new String(“A”)!==”A”.<br>switch uses === internally and new String(x) !== x;</p>
+<p>String(x) does not create an object but does return a string, i.e. typeof String(1) === “string”<br>所以String(“A”)===”A”</p>
+<p>parseInt(string,radix):第二个参数可选，表示String是几进制的数</p>
+<p>Array的一些方法特性：<br>Array.prototype.filter is not invoked for the missing elements.</p>
+<p>map is only invoked for elements of the Array which have been initialized.</p>
+<h3 id="Array-prototype-gt"><a href="#Array-prototype-gt" class="headerlink" title="Array.prototype=&gt;[]"></a><strong>Array.prototype=&gt;[]</strong></h3><h3 id="数字转字符：3-toString-gt-’3’、var-a-3-a-toString-gt-’3’"><a href="#数字转字符：3-toString-gt-’3’、var-a-3-a-toString-gt-’3’" class="headerlink" title="数字转字符：3..toString()=&gt;’3’、var a=3;a.toString()=&gt;’3’"></a>数字转字符：3..toString()=&gt;’3’、var a=3;a.toString()=&gt;’3’</h3><h3 id="var-x-y-1-gt-y是全局变量"><a href="#var-x-y-1-gt-y是全局变量" class="headerlink" title="{var x=y=1;}=&gt;y是全局变量"></a>{var x=y=1;}=&gt;y是全局变量</h3><h3 id="Function的实例的length放回参数的个数"><a href="#Function的实例的length放回参数的个数" class="headerlink" title="Function的实例的length放回参数的个数"></a>Function的实例的length放回参数的个数</h3>
+    
+  </div>
+
+  
+      <div class="git"></div>
+  
+
+</article>
+
+
+   
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/04/29/IIS-php/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/05/23/前端基础-2/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'lmj';
+    
+    var disqus_url = 'http://minjin29.cn/archives/2018/05/21/前端基础/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//lmj.disqus.com/count.js" async></script>
+
+
+
+    
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
